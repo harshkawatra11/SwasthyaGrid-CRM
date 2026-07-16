@@ -1,0 +1,16 @@
+rules_version = '2';
+
+// SwasthyaGrid Intake — all district data access happens server-side through
+// this app's authenticated API routes (Firebase Admin SDK, which bypasses
+// these rules by design) and through SwasthyaGrid's Cloud Run backend
+// (service account with roles/datastore.user). No client SDK ever talks to
+// Firestore directly, so these rules deny every direct client request —
+// the real access control lives in the session-scoped API routes
+// (src/lib/session.ts + src/middleware.ts).
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

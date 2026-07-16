@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+:root {
+  --color-paper: #f4eee4;
+  --color-paper-dim: #ede4d3;
+  --color-parchment: #e4d8c3;
+  --color-ink: #231f1a;
+  --color-ink-soft: #4a433a;
+  --color-hairline: #d8cbb4;
+  --color-accent-clay: #b5502e;
+  --color-accent-brass: #8a6d3b;
+
+  --color-risk-healthy: #3f6b4a;
+  --color-risk-monitor: #a8823a;
+  --color-risk-stress: #b5622e;
+  --color-risk-critical: #9e3a2e;
+}
+
+@theme inline {
+  --color-paper: var(--color-paper);
+  --color-paper-dim: var(--color-paper-dim);
+  --color-parchment: var(--color-parchment);
+  --color-ink: var(--color-ink);
+  --color-ink-soft: var(--color-ink-soft);
+  --color-hairline: var(--color-hairline);
+  --color-accent-clay: var(--color-accent-clay);
+  --color-accent-brass: var(--color-accent-brass);
+  --color-risk-healthy: var(--color-risk-healthy);
+  --color-risk-monitor: var(--color-risk-monitor);
+  --color-risk-stress: var(--color-risk-stress);
+  --color-risk-critical: var(--color-risk-critical);
+
+  --font-serif: var(--font-fraunces);
+  --font-sans: var(--font-plex-sans);
+  --font-mono: var(--font-plex-mono);
+}
+
+* {
+  border-color: var(--color-hairline);
+}
+
+html {
+  background: var(--color-paper);
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+.font-serif-display {
+  font-family: var(--font-serif), ui-serif, Georgia, serif;
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
